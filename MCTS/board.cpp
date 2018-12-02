@@ -25,7 +25,7 @@ board::board(){
     //initialise node_node_count
     for (int i=0;i<42;i++){
         int j=0;
-        while (node_node[i][j]!=-1){
+        while (node_node[i][j]!=-1 && j<6){
             j++;
         }
         node_node_count[i]=j-1;
@@ -36,14 +36,14 @@ board::board(){
     for (int i=0;i<42;i++){
         for (int j=0;j<node_node_count[i];j++){
             node_node_pos[i][node_node[i][j]]=j;
-            int k=0;
             bool ex=true;
-            while (node_node[node_node[i][j]][k]!=i){
-                k++;
-                ex=false;
+            for (int k=0;k<=node_node_count[node_node[i][j]];k++){
+                if (node_node[node_node[i][j]][k]==i){
+                    ex=false;
+                }
             }
             if (ex){
-                std::cout << "Error in node " << i << " " << j << std::endl;
+                std::cout << "Error in node " << i << " " << j << " " << node_node[i][j] << std::endl;
             }
         }
     }

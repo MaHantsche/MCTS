@@ -19,6 +19,14 @@ using namespace std::chrono;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    
+    
+    
+    
+    
+    
+    
+    
     int r1,r2;
     srand(int(time(NULL)));
     
@@ -85,10 +93,10 @@ int main(int argc, const char * argv[]) {
     t1 = high_resolution_clock::now();
     for (int i=0;i<=player2_counter[player];i++){
         j=player2[player][i];
-        if ((edge[j][4]>2) && (edge[j][3]!=player) && (2*edge[j][4]>edge[j][5])){
+        /*if ((edge[j][4]>2) && (edge[j][3]!=player) && (2*edge[j][4]>edge[j][5])){
             lookup[counter]=j;
             counter+=1;
-        }
+        }*/
         //cout << i << "\n";
     }
     t2 = high_resolution_clock::now();
@@ -157,7 +165,7 @@ int main(int argc, const char * argv[]) {
             i++;
         }
         i--;
-        int inf_to=no_no_[pl_no[0][i]][m-1-sum+no_no_co_[pl_no[0][i]]];
+        //int inf_to=no_no_[pl_no[0][i]][m-1-sum+no_no_co_[pl_no[0][i]]];
     }
     
     
@@ -168,12 +176,7 @@ int main(int argc, const char * argv[]) {
     
     cout << duration << " " << pl_move[0] << "\n";
     
-
-    board b=board();
-    
-    
-    
-    //std::cout << "Hello, World!\n";
+    cout << "Hello, World!\n";
     return 0;
 }
 

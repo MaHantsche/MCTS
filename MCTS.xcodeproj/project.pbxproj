@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80584DCC21B3333A0035DC18 /* board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80584DCA21B3333A0035DC18 /* board.cpp */; };
+		80584DCF21B337BB0035DC18 /* ai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 80584DCD21B337BB0035DC18 /* ai.cpp */; };
 		809AE38F21B207BF00D3E180 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 809AE38E21B207BF00D3E180 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		80584DCA21B3333A0035DC18 /* board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = board.cpp; sourceTree = "<group>"; };
+		80584DCB21B3333A0035DC18 /* board.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = board.hpp; sourceTree = "<group>"; };
+		80584DCD21B337BB0035DC18 /* ai.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ai.cpp; sourceTree = "<group>"; };
+		80584DCE21B337BB0035DC18 /* ai.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ai.hpp; sourceTree = "<group>"; };
 		809AE38B21B207BF00D3E180 /* MCTS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MCTS; sourceTree = BUILT_PRODUCTS_DIR; };
 		809AE38E21B207BF00D3E180 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				809AE38E21B207BF00D3E180 /* main.cpp */,
+				80584DCA21B3333A0035DC18 /* board.cpp */,
+				80584DCB21B3333A0035DC18 /* board.hpp */,
+				80584DCD21B337BB0035DC18 /* ai.cpp */,
+				80584DCE21B337BB0035DC18 /* ai.hpp */,
 			);
 			path = MCTS;
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80584DCC21B3333A0035DC18 /* board.cpp in Sources */,
 				809AE38F21B207BF00D3E180 /* main.cpp in Sources */,
+				80584DCF21B337BB0035DC18 /* ai.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +221,7 @@
 		809AE39321B207BF00D3E180 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +229,7 @@
 		809AE39421B207BF00D3E180 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,6 +253,7 @@
 				809AE39421B207BF00D3E180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

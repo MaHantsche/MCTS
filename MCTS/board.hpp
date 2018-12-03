@@ -70,6 +70,9 @@ protected:
     
 public:
     board(); //initialize board
+    void get_moves_count();
+    void get_player_moves_count();
+    void get_nodes();
     int * legal_moves(int player);
     
 };

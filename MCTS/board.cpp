@@ -28,7 +28,7 @@ board::board(){
         while (node_node[i][j]!=-1 && j<6){
             j++;
         }
-        node_node_count[i]=j-1;
+        node_node_count[i]=j;
     }
     
     //test if node_node is consistent
@@ -47,33 +47,22 @@ board::board(){
             }
         }
     }
-    
-    /*
-    // random initialisation
-    int i=0;
-    do {
-        int a=rand()%42;
-        int b=rand()%42;
-        if (a!=b) {
-            bool ex=false;
-            for (int j=0;j<node_node_count[a];j++){
-                if (node_node[a][j]==b){
-                    ex=true;
-                }
-            }
-            if (!ex) {
-                node_node[a][node_node_count[a]]=b;
-                node_node_pos[a][b]=node_node_count[a];
-                node_node_count[a]++;
-                node_node[b][node_node_count[b]]=a;
-                node_node_pos[b][a]=node_node_count[b];
-                node_node_count[b]++;
-                i++;
-                
-            }
-        }
-        
-    } while (i<75);
-    */
-    
+}
+
+void board::get_moves_count(){
+    for (int i=0;i<42;i++){
+        std::cout << i << " " << node_node_moves_count[i] << std::endl;
+    }
+}
+
+void board::get_player_moves_count(){
+    for (int i=0;i<6;i++){
+        std::cout << i << " " << player_move_count[i] << std::endl;
+    }
+}
+
+void board::get_nodes(){
+    for (int i=0;i<42;i++){
+        std::cout << i << " " << node[i][0] << " " << node[i][1] << std::endl;
+    }
 }

@@ -34,12 +34,15 @@ void ai::initailize_board_random(board &b, int player){
     }
     
     for (int p=0;p<player;p++){
-        for (int node_from=0;node_from<b.player_node_count[p%player];node_from++){
+        for (int p_n_c=0;p_n_c<b.player_node_count[p%player];p_n_c++){
+            int node_from=b.player_node[p][p_n_c];
             if (b.node[node_from][1]>2){
-                for (int node_to=0;node_to<b.node_node_count[b.player_node[p][node_from]];node_to++){
+                for (int n_n_c=0;n_n_c<b.node_node_count[node_from];n_n_c++){
+                    int node_to=b.node_node[node_from][n_n_c];
                     if(b.node[node_to][0]!=p){
                         b.node_node_moves[node_from][b.node_node_moves_count[node_from]]=node_to;
                         b.node_node_moves_count[node_from]++;
+                        b.player_move_count[p]++;
                     }
                 }
             }
@@ -50,7 +53,7 @@ void ai::initailize_board_random(board &b, int player){
 void ai::set_random_sequence(){
     for (int i=0;i<100;i++){
         for (int j=0;j<100;j++){
-            this->random_seq[i][j]=random();
+            random_seq[i][j]=random();
         }
     }
     

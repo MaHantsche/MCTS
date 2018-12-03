@@ -19,9 +19,14 @@ using namespace std::chrono;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    srand(int(time(NULL)));
     
     board b=board();
-    
+    ai a=ai();
+    a.initailize_board_random(b, 6);
+    b.get_moves_count();
+    b.get_player_moves_count();
+    b.get_nodes();
     
     cout << "Hello, World!\n";
     return 0;

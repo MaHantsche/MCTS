@@ -66,3 +66,17 @@ void board::get_nodes(){
         std::cout << i << " " << node[i][0] << " " << node[i][1] << std::endl;
     }
 }
+
+//int** board::legal_moves(int player){
+//    int moves[6][100];
+//    for (int p=0;p<player;p++){
+//        for (int p_n_c=0;p_n_c<player_node_count[p];p_n_c++){
+//            int node_from=player_node[p][p_n_c];
+//            for (int n_n_c=0;n_n_c<node_node_moves_count[node_from];n_n_c++){
+//                moves[p][node_from]=node_node_moves[node_from][n_n_c];
+//            }
+//        }
+//    }
+//    int *m=&moves[0][0];
+//    return m;
+//}

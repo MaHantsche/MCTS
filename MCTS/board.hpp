@@ -73,7 +73,9 @@ public:
     void get_moves_count();
     void get_player_moves_count();
     void get_nodes();
-    int * legal_moves(int player);
+    
+    
+    //int** legal_moves(int player);
     
 };
 

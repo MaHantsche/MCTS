@@ -56,5 +56,4 @@ void ai::set_random_sequence(){
             random_seq[i][j]=random();
         }
     }
-    
 }

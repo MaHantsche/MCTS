@@ -10,59 +10,98 @@
 #include <cstdlib>
 #include <ctime>
 #include <chrono>
-#include "board.hpp"
-#include "ai.hpp"
+//#include "board.hpp"
+//#include "ai.hpp"
+#include "functions.hpp"
 
 using namespace std;
 using namespace std::chrono;
 
-void old_code();
+//void old_code();
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    srand(int(time(NULL)));
+    srand(int(time(0)));
+    short rand_count=0;
     
-    board b=board();
-    ai a=ai();
-    a.initailize_board_random(b, 6);
-    //b.get_moves_count();
-    //b.get_player_moves_count();
-    //b.get_nodes();
+    std::array<std::array<short,6>,3000> rand_sequence;
+    board b;
+    init_board(b);
+    set_random_sequence(rand_sequence);
+    short player=6;
+    std::cout << player;
+    set_node_random(b, player);
+    bool not_found=true;
+    short i=0;
+    while (not_found){
+        if (b.node[1][i]>3){
+            not_found=false;
+        }
+        i++;
+    };
+    i--;
+    not_found=true;
+    short j=0;
+    while (not_found){
+        if (b.node[0][b.node_node[i][j]]!=b.node[0][i]){
+            not_found=false;
+        }
+        j++;
+    };
+    j--;
     
-    old_code();
+    short to_node=i;
+    short from_node=b.node_node[i][j];
+    update_legal_moves(b,from_node,to_node,rand_count, rand_sequence);
+    
+    
+    
+    
+    cout << b.node.size() << endl;
+    cout << b.node[0].size() << endl;
+    cout << b.node_node[0].size() << endl;
+    
+    //for (int i=0;i<42;i++){
+    //    std::cout << i << " " << b.node[0][i] << " " << b.node[1][i] << std::endl;
+    //}
+    
+    
+    
+    
+    //old_code();
     
     cout << "Hello, World!\n";
-    return 0;
+    //return 0;
 }
     
     
     
 void old_code(){
     
-    int r1,r2;
+    unsigned char r1,r2;
     srand(int(time(NULL)));
 
-    int node[42][2];
-    for (int i=0;i<42;i++){
+    unsigned char node[42][2];
+    for (unsigned char i=0;i<42;i++){
         node[i][0]=rand()%6;
         node[i][1]=rand()%4+1;
     }
     
-    int edge[166][6];
-    int node2[42][42];
-    int node2_counter[42];
-    int player2[6][42];
-    int player2_counter[6];
+    unsigned char edge[166][6];
+    unsigned char node2[42][42];
+    unsigned char node2_counter[42];
+    unsigned char player2[6][42];
+    unsigned char player2_counter[6];
 
-    for (int i=0;i<42;i++){
+    for (unsigned char i=0;i<42;i++){
         node2_counter[i]=0;
     }
 
-    for (int i=0;i<6;i++){
+    for (unsigned char i=0;i<6;i++){
         player2_counter[i]=0;
     }
 
-    for (int i=0;i<166;i++){
+    for (unsigned char i=0;i<166;i++){
         r1=rand()%42;
         r2=rand()%42;
         //if (r1!=r2){
@@ -81,13 +120,13 @@ void old_code(){
     }
     
 
-    int player=0;
+    unsigned char player=0;
 
-    int counter=0;
-    int lookup[166];
+    unsigned char counter=0;
+    unsigned char lookup[166];
 
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
-    for (int i=0;i<166;i++){
+    for (unsigned char i=0;i<166;i++){
         if ((edge[i][2]==player) && (edge[i][3]!=player) && (edge[i][4]>2) && (2*edge[i][4]>edge[i][5])){
             lookup[counter]=i;
             counter+=1;
@@ -99,11 +138,11 @@ void old_code(){
 
     cout << duration << " " << counter << "\n";
 
-    int j;
+    unsigned char j;
 
     counter=0;
     t1 = high_resolution_clock::now();
-    for (int i=0;i<=player2_counter[player];i++){
+    for (unsigned char i=0;i<=player2_counter[player];i++){
         j=player2[player][i];
         /*if ((edge[j][4]>2) && (edge[j][3]!=player) && (2*edge[j][4]>edge[j][5])){
             lookup[counter]=j;
@@ -117,30 +156,30 @@ void old_code(){
 
     cout << duration << " " << counter << "\n";
 
-    int pl_no[6][42];
-    int pl_no_co[6];
-    int no[42][3];
-    int no_no[42][7];
-    int no_no_co[42];
-    int no_no_[42][7];
-    int no_no_co_[42];
-    int pl_move[6];
+    unsigned char pl_no[6][42];
+    unsigned char pl_no_co[6];
+    unsigned char no[42][3];
+    unsigned char no_no[42][7];
+    unsigned char no_no_co[42];
+    unsigned char no_no_[42][7];
+    unsigned char no_no_co_[42];
+    unsigned char pl_move[6];
 
-    for (int i=0;i<6;i++){
+    for (unsigned char i=0;i<6;i++){
         pl_no_co[i]=0;
         pl_move[i]=1;
     }
 
-    for (int i=0;i<42;i++){
+    for (unsigned char i=0;i<42;i++){
         no_no_co[i]=0;
         no_no_co_[i]=0;
     }
 
     bool ex;
 
-    for (int i=0;i<166;i++){
+    for (unsigned char i=0;i<166;i++){
         ex=true;
-        for (int j=0;j<=pl_no_co[edge[i][2]];j++){
+        for (unsigned char j=0;j<=pl_no_co[edge[i][2]];j++){
             if (pl_no[edge[i][2]][j]==edge[i][0]){
                 ex=false;
             }
@@ -166,18 +205,18 @@ void old_code(){
     t1 = high_resolution_clock::now();
 
     // choose move
-    int m=rand()%pl_move[0];
+    unsigned char m=rand()%pl_move[0];
     if (m+1==pl_move[0]){
         //no move
     } else {
-        int sum=0;
-        int i=0;
+        unsigned char sum=0;
+        unsigned char i=0;
         while (sum<m){
             sum+=no_no_co_[pl_no[0][i]];
             i++;
         }
         i--;
-        //int inf_to=no_no_[pl_no[0][i]][m-1-sum+no_no_co_[pl_no[0][i]]];
+        //unsigned char inf_to=no_no_[pl_no[0][i]][m-1-sum+no_no_co_[pl_no[0][i]]];
     }
 
 
@@ -187,6 +226,16 @@ void old_code(){
     duration = duration_cast<nanoseconds>( t2 - t1 ).count();
 
     cout << duration << " " << pl_move[0] << "\n";
+    
+    
+    t1 = high_resolution_clock::now();
+    t2 = high_resolution_clock::now();
+    
+    duration = duration_cast<nanoseconds>( t2 - t1 ).count();
+    
+    cout << duration << " " << pl_move[0] << "\n";
+    
+    
 
 }
 

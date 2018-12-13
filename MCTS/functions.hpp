@@ -76,3 +76,4 @@ short win(float random, short dice);
 void set_node_random(board &board, short player);
 void update_legal_moves(short from_node,short to_node);
 void update_legal_moves(board &board, short from_node,short to_node,short &rand_count, std::array<std::array<short,6>,3000> &random_sequence);
+short random_move(short player,board &board);

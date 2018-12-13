@@ -29,31 +29,14 @@ int main(int argc, const char * argv[]) {
     init_board(b);
     set_random_sequence(rand_sequence);
     short player=6;
-    std::cout << player;
     set_node_random(b, player);
-    bool not_found=true;
-    short i=0;
-    while (not_found){
-        if (b.node[1][i]>3){
-            not_found=false;
-        }
-        i++;
-    };
-    i--;
-    not_found=true;
-    short j=0;
-    while (not_found){
-        if (b.node[0][b.node_node[i][j]]!=b.node[0][i]){
-            not_found=false;
-        }
-        j++;
-    };
-    j--;
     
-    short to_node=i;
-    short from_node=b.node_node[i][j];
-    update_legal_moves(b,from_node,to_node,rand_count, rand_sequence);
+    short move=random_move(0,b);
+    update_legal_moves(b,move / 100,move % 100,rand_count, rand_sequence);
     
+    //fortify(0);
+    
+    //get_infantry(0);
     
     
     

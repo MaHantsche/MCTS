@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/main.cpp"
-            timestampString = "566348810.317616"
+            timestampString = "566418649.378564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/ai.cpp"
-            timestampString = "566348810.318006"
+            timestampString = "566418649.379617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "250"
@@ -40,7 +40,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/functions.cpp"
-            timestampString = "566348810.318207"
+            timestampString = "566418649.379832"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/functions.cpp"
-            timestampString = "566348810.318871"
+            timestampString = "566418649.3800941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "set_node_random(board &amp;board, short player)"
             landmarkType = "9">
          </BreakpointContent>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/functions.cpp"
-            timestampString = "566348810.3192019"
+            timestampString = "566418649.380165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "set_node_random(board &amp;board, short player)"
             landmarkType = "9">
          </BreakpointContent>
@@ -88,12 +88,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCTS/functions.cpp"
-            timestampString = "566348810.3195"
+            timestampString = "566418649.380227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "set_node_random(board &amp;board, short player)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCTS/main.cpp"
+            timestampString = "566418649.380291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "main(int argc, const char * argv[])"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCTS/functions.cpp"
+            timestampString = "566418649.380614"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "update_legal_moves(board &amp;board, short from_node,short to_node,short &amp;rand_count, std::array&lt;std::array&lt;short,6&gt;,3000&gt; &amp;random_sequence)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -103,13 +135,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCTS/main.cpp"
-            timestampString = "566349474.56864"
+            filePath = "MCTS/functions.cpp"
+            timestampString = "566418649.380664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "main(int argc, const char * argv[])"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "update_legal_moves(board &amp;board, short from_node,short to_node,short &amp;rand_count, std::array&lt;std::array&lt;short,6&gt;,3000&gt; &amp;random_sequence)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

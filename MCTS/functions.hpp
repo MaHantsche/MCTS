@@ -15,6 +15,16 @@
 #endif /* functions_hpp */
 
 
+struct sboard{
+    //std::array<std::array<unsigned char,42>,6> player_node;
+    std::array<std::array<unsigned char,42>,2> node;
+    //std::array<unsigned char,6> player_node_count; //number of nodes per player
+    //unsigned char node_node_pos[42][42]; //fix: position of node to node connection in the node_node array
+    //std::array<std::array<unsigned char,7>,42> node_node_moves; //nodes and their connected nodes which allow a move (start node has more than 2 infantry units and end node belongs to another player (legal moves per node)
+    //std::array<unsigned char,42> node_node_moves_count; //number of legal moves per node
+    //std::array<unsigned char,6> player_move_count; //number of legal moves per player
+};
+
 struct board{
     std::array<std::array<short,42>,6> player_node;
     std::array<std::array<short,42>,2> node;

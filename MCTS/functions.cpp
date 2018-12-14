@@ -143,6 +143,7 @@ void set_node_random(board &board, short player){
     }
 
     short infantry=50-player*5;
+    //infantry=40;
     short total_infantry=infantry*player;
 
     for (short i=42;i<total_infantry;i++){

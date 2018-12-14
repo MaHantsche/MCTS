@@ -21,8 +21,13 @@ using namespace std::chrono;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    srand(int(time(0)));
+    srand(int(time(NULL)));
     short rand_count=0;
+    
+    static std::array<sboard,1000000> bx;
+    std::cout<<sizeof(bx)/1024/1024<<std::endl;
+    
+    
     
     std::array<std::array<short,6>,3000> rand_sequence;
     board b;
@@ -30,10 +35,17 @@ int main(int argc, const char * argv[]) {
     set_random_sequence(rand_sequence);
     short player=6;
     set_node_random(b, player);
+    high_resolution_clock::time_point t0 = high_resolution_clock::now();
+    for (int i=0;i<20;i++){
+        short move=random_move(i%6,b);
+        update_legal_moves(b,move / 100,move % 100,rand_count, rand_sequence);
+    }
+    high_resolution_clock::time_point t2 = high_resolution_clock::now();
+    high_resolution_clock::time_point t3 = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(t2 - t0 - (t3-t2)).count();
     
-    short move=random_move(0,b);
-    update_legal_moves(b,move / 100,move % 100,rand_count, rand_sequence);
-    
+    cout << "duration: "<<duration/20 << "\n";
+    cout << "rand_count "<<rand_count<<endl;
     //fortify(0);
     
     //get_infantry(0);
@@ -54,6 +66,8 @@ int main(int argc, const char * argv[]) {
     //old_code();
     
     cout << "Hello, World!\n";
+    int x;
+    //std::cin>>x;
     //return 0;
 }
     
